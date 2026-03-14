@@ -1,11 +1,9 @@
 # 开发流程强化
 ## 整体要求
-- 整体使用superpowers工作流，对话开始先载入*using-superpowers*技能。
 - 调用mcp失败时，优先根据调用返回的*信息(message)*, 调整调用参数重新执行mcp调用。
-- 具体代码开发过程中根据*测试驱动开发（TDD）*要求进行,写测试用例时，载入*unity-test-framework*技能。
-- 发过程中及时读取unity编辑器的*Console*窗口内容，检查是否有报错
+- 开发过程中按照*测试驱动开发（TDD）*进行。
+- 开发过程中读取unity编辑器的*Console*窗口内容，检查是否有报错
 - 任何对场景的编辑（如搭建场景），直接通过*unityMCP*来做，尽量避免用脚本配置
-- 任何对场景中对象组件配置的修改（如改变物体颜色），直接通过*unityMCP*来做，尽量避免用脚本配置
 - 使用unityMCP时，先载入*unity-mcp-helper*技能，了解*unityMCP*具有的编辑器操作功能。
 - 使用git做版本管理
 
@@ -14,8 +12,6 @@
 | 时机 | 技能 |
 |------|------|
 | 使用unityMCP时| `unity-mcp-helper` |
-| 方案设计时 | `unity-developer` |
-| 测试驱动开发 | `test-driven-development`, `unity-test-framework` |
 
 # 偏好
 ## 输入系统
