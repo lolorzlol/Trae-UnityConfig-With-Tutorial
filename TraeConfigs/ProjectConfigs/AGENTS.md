@@ -80,7 +80,10 @@
 ### Test-Driven Development (TDD)
 
 - Follow the *Red-Green-Refactor* cycle: write failing tests first, then implement code, and run tests again to make them pass.
-- Run tests through `unityMCP` with `run_tests`.
+- Run tests through `run_tests` in `unityMCP` with parameters:
+  -`mode`: "EditMode" or "PlayMode"
+  - `test_names`: Array of test names to run (optional, runs all if omitted)
+  - `include_failed_tests`: Include test details for failed tests
 - After tests pass, refactor code through code-review.
 
 ## Skills Reference
@@ -102,7 +105,7 @@ Load the appropriate skill before starting each workflow:
 ### Git
 
 - Do not use `git worktree`.
-- Commit changes promptly.
+- Commit changes staged periodically.
 
 ## GameObjects Setup & Editing & Configuration
 
