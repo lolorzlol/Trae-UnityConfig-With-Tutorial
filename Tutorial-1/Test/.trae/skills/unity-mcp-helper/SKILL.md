@@ -86,6 +86,11 @@ description: Use when user mentions Unity MCP, CoplayDev/unity-mcp, or wants to 
 - Game view captures
 - Scene view captures
 
+### Testing → `run_tests` / `get_test_job`
+- Run EditMode/PlayMode tests
+- Poll test job results
+- Get test status and details
+
 ## Version Features
 
 ### v9.5.3 (Latest Beta)
@@ -189,6 +194,19 @@ Note: Prefab references must be configured manually
 1. batch_execute: Multiple asset imports in one call
 ```
 
+### Run Tests
+```
+1. run_tests: Start test execution
+   - mode: "EditMode" or "PlayMode"
+   - test_names: ["MyTests.TestPlayerMovement"] (optional, run specific tests)
+   - include_failed_tests: true (include test details for failed tests)
+
+2. get_test_job: Poll for results
+   - job_id: from run_tests result
+   - wait_timeout: 60 (seconds to wait for completion)
+   - include_failed_tests: true (include details for failed tests)
+```
+
 ## Tool Parameters Reference
 
 ### manage_gameobject
@@ -228,6 +246,16 @@ Note: Prefab references must be configured manually
 ### batch_execute
 - `operations`: Array of operations to execute
 - `atomic`: true|false (rollback on error)
+
+### run_tests
+- `mode`: "EditMode" or "PlayMode"
+- `test_names`: Array of test names to run (optional, runs all if omitted)
+- `include_failed_tests`: Include test details for failed tests
+
+### get_test_job
+- `job_id`: Job ID from run_tests result
+- `wait_timeout`: Seconds to wait for completion
+- `include_failed_tests`: Include details for failed tests
 
 ## Best Practices
 

@@ -6,11 +6,13 @@
 
 - Check both `message` and `success` from MCP call results to determine success. When `message` doesn't match expectations, treat the call as failed.
 - When MCP calls fail, adjust parameters based on the returned `message` and retry.
+- Use `batch_execute` as much as possible to reduce MCP call times.
 - Follow `Test-Driven Development (TDD)` during development.
-- Check the Unity Editor `Console` window regularly for errors during development.
-
-- Load the `unity-mcp-helper` skill before using unityMCP to understand available editor operations.
+- Check the Unity Editor `Console` log with `read_console` regularly for errors.
+- Write editor scripts to config and setup scene rather than direct `unityMCP` call.
+- If editor scripts is created for tasks, execute it `automatically` via MCP, avoid execute manually. The explict guide is in **GameObjects Setup & Editing & Configuration**.
 - Use git for version control.
+- Add Tooltip attributes to editor-configurable variables.
 
 ### Plan Mode Orchestration
 
@@ -23,7 +25,7 @@
 ### Task Management
 
 1. Plan first: write plan to `tasks/todo.md` with checkboxes.
-2. Validate plan: check before starting implementation.
+2. Validate plan before starting implementation.
 3. Implement incrementally: check off each step as completed.
 4. Explain changes: provide high-level summary for each step.
 5. Document results: add review section in `tasks/todo.md`.
@@ -73,23 +75,13 @@
 - User doesn't need to switch context.
 - Proactively fix failing CI tests, no need to tell how.
 
-## Testing Instructions
+## Testing
 
 ### Test-Driven Development (TDD)
 
-- Follow the *Red-Green-Refactor* cycle: write failing tests first, then implement code, and run the tests again to make them pass.
-- Run tests through the Unity Editor TestRunner.
+- Follow the *Red-Green-Refactor* cycle: write failing tests first, then implement code, and run tests again to make them pass.
+- Run tests through `unityMCP` with `run_tests`.
 - After tests pass, refactor code through code-review.
-- Use *unityMCP* to launch tests via TestRunner in the editor.
-
-### In-Editor Game Testing
-
-Basic workflow:
-
-1. Enter Play mode to start the game.
-2. Simulate input.
-3. Screenshot the Game window.
-4. Analyze the screenshot visually and fix any issues found.
 
 ## Skills Reference
 
@@ -112,19 +104,24 @@ Load the appropriate skill before starting each workflow:
 - Do not use `git worktree`.
 - Commit changes promptly.
 
-## Scene Setup
+## GameObjects Setup & Editing & Configuration
 
 - Design the size and materials of different objects carefully.
-- **Automated Configuration with Editor Scripts**: When needing to set up complex references, create editor scripts (in `Assets/Scripts/Editor/` folder) to automate the configuration process. This includes both:
-  - **Scene object references**: Use `GameObject.Find()` to locate objects in the scene
-  - **Prefab references**: Use `AssetDatabase.LoadAssetAtPath<T>()` to load prefabs and assets from disk
-  - Then assign them directly to component fields programmatically. Add a menu item with `[MenuItem]` attribute to trigger the setup process.
+- **Automated Configuration with Editor Scripts**: When needing to set up complex references, create editor scripts (in `Assets/Scripts/Editor/` folder) to automate the configuration process:
+  - **Scene object references**: Use `GameObject.Find()` to locate objects in the scene.
+  - **Prefab references**: Use `AssetDatabase.LoadAssetAtPath<T>()` to load prefabs and assets from disk.
+  - Assign them directly to component fields programmatically. Add a menu item with `[MenuItem]` attribute to trigger the setup process.
+- **Running Editor Scripts**:
+  1. Use `[MenuItem("YourMenuPath")]` attribute on a static method in your editor script.
+  2. Refresh Unity with `mcp_unityMCP_refresh_unity` to compile the script.
+  3. Execute the menu item with `mcp_unityMCP_execute_menu_item` and pass the exact menu path.
+  4. The script will run in the Unity editor and perform all configured actions.
 
 ## Troubleshooting
 
 ### Common Issues
 
-- When using unit-test-framework, forgetting to call the `unity-test-framework` skill causes compilation errors.
+- When using unity-test-framework, forgetting to call the `unity-test-framework` skill causes compilation errors.
 
 ### Debugging Steps
 
