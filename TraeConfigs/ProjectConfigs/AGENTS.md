@@ -9,6 +9,7 @@
 - Use `batch_execute` as much as possible to reduce MCP call times.
 - Follow `Test-Driven Development (TDD)` during development.
 - Check the Unity Editor `Console` log with `read_console` in `unityMCP` regularly for errors.
+- Ensure the editor is not in Play mode before executing editor scripts.
 - Write editor scripts to config and setup scene rather than direct `unityMCP` call.
 - If editor scripts is created for tasks, execute it `automatically` via MCP, avoid execute manually. The explict guide is in **GameObjects Setup & Editing & Configuration**.
 - Use git for version control.
