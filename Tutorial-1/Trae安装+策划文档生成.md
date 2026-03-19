@@ -20,11 +20,10 @@ https://docs.trae.ai/
 2. 打开Trae，打开刚创建的文件夹
 ![alt text](image-2.png)
 
-![alt text](image-4.png)
-
 ![alt text](image-5.png)
 
-3. 安装扩展插件
+1. 安装扩展插件
+![alt text](image-17.png)
 ![alt text](image-6.png)
 
 ## 项目配置

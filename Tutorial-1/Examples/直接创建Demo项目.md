@@ -30,6 +30,14 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 之后会启动一个网络监听进程，不能关，放下面就好了。
 ![alt text](image-7.png)
 
+
+# 将配置文件复制到新建的项目中
+直接把本项目中的TraeConfigs\ProjectConfigs里面的.trae文件夹和AGENTS.md复制到新建的unity项目根目录就行了。
+![alt text](image-10.png)
+
+# 打开Trae,打开项目文件夹，进入solo模式
+详细可参考[游戏策划案例](Tutorial-1/Trae安装+策划文档生成.md)
+
 # Trae对话
 1. 直接提问，“用superpowers工作流，balabala”
 ![alt text](image.png)
