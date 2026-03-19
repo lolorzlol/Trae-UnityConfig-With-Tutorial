@@ -1,61 +1,133 @@
-# 开发流程强化
-## 整体要求
-- 整体使用superpowers工作流，对话开始先载入*using-superpowers*技能。
-- 调用mcp失败时，优先根据调用返回的*信息(message)*, 调整调用参数重新执行mcp调用。
-- 具体代码开发过程中根据*测试驱动开发（TDD）*要求进行,写测试用例时，载入*unity-test-framework*技能。
-- 发过程中及时读取unity编辑器的*Console*窗口内容，检查是否有报错
-- 任何对场景的编辑（如搭建场景），直接通过*unityMCP*来做，尽量避免用脚本配置
-- 任何对场景中对象组件配置的修改（如改变物体颜色），直接通过*unityMCP*来做，尽量避免用脚本配置
-- 使用unityMCP时，先载入*unity-mcp-helper*技能，了解*unityMCP*具有的编辑器操作功能。
-- 使用git做版本管理
+# AGENTS.md
 
-## 技能依赖
+## Skills Reference
 
-| 时机 | 技能 |
-|------|------|
-| 使用unityMCP时| `unity-mcp-helper` |
-| 方案设计时 | `unity-developer` |
-| 测试驱动开发 | `test-driven-development`, `unity-test-framework` |
+Load the appropriate skill before starting each workflow:
 
-# 偏好
-## 输入系统
-- 使用旧的输入系统
-## git
-- 不使用*git worktree*。
-- 及时更新git commit。
+| Workflow | Skill |
+|----------|-------|
+| Using unityMCP | `unity-mcp-orchestrator` |
+| Using unity-test-framework | `unity-test-framework` |
 
-# 测试驱动开发（TDD）
-- 使用*unity-test-framework*框架
-- 按照*Red-Green-Refactor*方式迭代开发，先写失败测试，代码开发完成后通过测试，然后重构。
-- 通过*unityMCP*在编辑器内启动测试
+---
 
-# 游戏编辑器内测试
-### 基本流程
-- 通过play模式进入游戏
-- 模拟输入
-- 截图game窗口
-- 对截图内容进行图像理解，并修复存在的问题
+## Development Workflow
 
-# 场景搭建
-- 需要充分设计不同物体的大小和材质
+### Operation Requirements
 
-# Unity MCP
-## Unity MCP 常用操作示例
-### 材质应用
-- 创建材质：`manage_asset` action: create, asset_type: Material, path: 材质路径
-- 应用材质：`manage_components` action: set_property, component_type: MeshRenderer, property: material, value: 材质路径(字符串)
-- 注意：`set_property` 时只需 property 和 value 参数，不需要 properties 参数
+- Check both `message` and `success` from MCP call results to determine success
+- When MCP calls fail, adjust parameters based on the returned `message` and retry
+- Use `batch_execute` as much as possible to reduce MCP call times
+- Ensure the editor is not in Play mode before executing editor scripts
+- Execute editor scripts automatically via `unityMCP` (avoid manual execution)
+- Use git for version control, add proper `.gitignore` before `git init`
+- Add Tooltip attributes to editor-configurable variables
+- Check Unity Console log first when encountering bugs
 
-#### 从场景中已有对象创建预制体
-- 使用 manage_gameobject 工具的 modify 动作，设置 save_as_prefab 参数为 true。
-- 示例：
-```
-# 例子：将场景中名为 "Player" 的对象保存为预制体  
-manage_gameobject(  
-    action="modify",  
-    target="Player",  
-    save_as_prefab=True,  
-    prefab_path="Assets/Prefabs/Player.prefab"  
-)
-```
+### Plan Mode Orchestration
 
+- Non-trivial tasks (3+ steps or architecture decisions) must enter plan mode
+- If things go off track, stop and replan—don't push through
+- If bugs or frustration accumulate, stop and replan
+- Write detailed specs as input to reduce ambiguity
+- Use numbered steps
+
+### Task Management
+
+1. Plan first: write plan to `tasks/todo.md` with checkboxes
+2. Validate plan before starting implementation
+3. Implement incrementally: check off each step as completed
+4. Explain changes: provide high-level summary for each step
+5. Document results: add review section in `tasks/todo.md`
+6. Record lessons: update `tasks/lessons.md` after corrections
+
+### Subagent Strategy
+
+- Use subagents heavily to keep the main context window clean
+- Outsource research, exploration, and parallel analysis to subagents
+- Reduce cognitive load and separate concerns via subagents
+- One task per subagent, focused execution
+
+### Code Quality Principles
+
+**Self-Improvement Loop:**
+
+- After user correction: update `tasks/lessons.md` to record patterns
+- Write rules for yourself to prevent the same mistakes
+- Iterate improvements until error rate drops
+- Verify improvements each session, apply to relevant projects
+
+**Verification Defaults:**
+
+- Never mark a task complete until you've proven it works
+- Compare main branch to your changes when relevant
+- Always be ready to push to production, verify
+- Ask yourself "Would a senior engineer approve this?"
+- Do assertions, logs, test suite corrections
+
+**Elegant Code:**
+
+- For non-trivial changes: pause and ask "Is there a more elegant way?"
+- If a fix feels like a patch: "Now that I know everything, implement an elegant solution"
+- Skip this step for simple obvious fixes, don't over-engineer
+- Challenge your own work before committing
+
+**Core Principles:**
+
+- Simplicity first: each change should be as simple as possible
+- Don't be lazy: find root causes, no band-aid fixes
+- Minimal impact: changes should only involve what's necessary
+
+**Autonomous Bug Fixing:**
+
+- When you find a bug: fix it directly, don't ask for help
+- Point out logs, errors, failing tests, then resolve
+- User doesn't need to switch context
+- Proactively fix failing CI tests
+
+---
+
+## Testing
+
+### Test-Driven Development (TDD)
+
+- Follow the **Red-Green-Refactor** cycle
+- Run tests through `run_tests` in `unityMCP`
+- After tests pass, refactor code through code-review
+
+---
+
+## Preferences
+
+### Input System
+
+- Use the legacy input system
+
+### Git
+
+- Do not use `git worktree`
+
+---
+
+## GameObjects Setup
+
+- Design the size and materials of different objects carefully
+
+---
+
+## Editor Scripts
+
+**Running Editor Scripts:**
+
+1. Use `[MenuItem("YourMenuPath")]` attribute on a static method
+2. Refresh Unity with `mcp_unityMCP_refresh_unity` to compile
+3. Execute the menu item with `mcp_unityMCP_execute_menu_item`
+4. The script will run in Unity and perform configured actions
+
+---
+
+## Troubleshooting
+
+### Common Issues
+
+- When using unity-test-framework, forgetting to call the `unity-test-framework` skill causes compilation errors

@@ -31,12 +31,18 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 > PowerShell 粘贴使用 `Ctrl+Shift+V`，最后按 `Enter` 执行。
 
 ### 步骤 3：安装 MCP
+安装方式有两种
 
+1. 通过git URL安装
 在 Unity 中：`Window > Package Manager > + > Add package from git URL...`
 
 ```
 https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 ```
+2. unity asset store
+![alt text](image-11.png)
+
+使用Unity asset store版本会落后一些。
 
 ### 步骤 4：开启 MCP
 

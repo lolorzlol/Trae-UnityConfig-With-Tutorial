@@ -128,7 +128,7 @@ Create asmdef for your main scripts first:
 Assets/
 ├── Scripts/
 │   ├── MainScripts.asmdef      # Main code assembly
-│   └── (your scripts)
+│   └── (your folds and scripts)
 └── Tests/
     ├── EditMode/
     │   ├── MyEditModeTests.asmdef
