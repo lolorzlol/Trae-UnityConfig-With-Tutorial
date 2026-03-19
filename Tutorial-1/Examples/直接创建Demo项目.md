@@ -45,4 +45,4 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 5. 等待
 之后就是比较长时间的等待，他会自动生成内容，控制编辑器等等。中间可以打断干预，有时候会犯错而且一直绕圈子。
 
-最后完成后可以自己测试，有bug的话, 新开窗口（清零上下文），转到[修复Bug](Tutorial-1/Examples/修复Bug.md)。
+最后完成后可以自己测试，有bug的话,可以直接在下面让改,也可以新开窗口（清零上下文）。提示词，看[修复Bug](Tutorial-1/Examples/修复Bug.md)。
