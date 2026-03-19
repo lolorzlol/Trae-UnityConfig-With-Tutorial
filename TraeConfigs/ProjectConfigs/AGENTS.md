@@ -87,7 +87,7 @@ Load the appropriate skill before starting each workflow:
 
 ### Test-Driven Development (TDD)
 
-- Follow the *Red-Green-Refactor* cycle: write failing tests first, then implement code, and run tests again to make them pass.
+- Follow the *Red-Green-Refactor* cycle.
 - Run tests through `run_tests` in `unityMCP`.
 - After tests pass, refactor code through code-review.
 
