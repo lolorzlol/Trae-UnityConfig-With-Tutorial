@@ -50,6 +50,8 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 ### 步骤 4：开启 MCP
 
+依次点击菜单项开启 MCP：
+
 ![开启 MCP 步骤 1](image-5.png)
 
 ![开启 MCP 步骤 2](image-8.png)
@@ -68,13 +70,69 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 ---
 
-## 打开 Trae 并进入 Solo 模式
+## 打开 Trae 并进入项目文件夹
 
-详细步骤参考 [游戏策划案例](../Trae安装+策划文档生成.md)
+详细步骤参考 [游戏策划案例](../Trae安装+策划文档生成.md)。
+
+---
+
+## 开启 Trae 中的 MCP 开关
+
+在 IDE 模式中，打开右上角的设置：
+
+![打开设置](image-12.png)
+
+选择 MCP：
+
+![选择 MCP](image-13.png)
+
+以下两种方式选其一：
+
+**方式一：启用项目级 MCP**
+
+先确保 `.trae` 配置文件夹下面有 `mcp.json` 文件：
+
+![检查 mcp.json](image-15.png)
+
+然后开启"启用项目级 MCP"：
+
+![启用项目级 MCP](image-16.png)
+
+在 unityMCP 旁边点启动：
+
+![启动 unityMCP](image-19.png)
+
+**方式二：在 Trae 编辑器里面手动添加**
+
+![手动添加 MCP](image-17.png)
+
+然后复制以下内容到里面，再确认：
+
+![粘贴配置](image-18.png)
+
+```json
+{
+  "mcpServers": {
+    "unityMCP": {
+      "url": "http://localhost:8080/mcp"
+    }
+  }
+}
+```
+
+### 检查 MCP 连接
+
+最后检查 MCP 是否连接上。（注意：需要保证 Unity 先开启 MCP，然后打开 Trae，顺序不能反）
+
+点击 `@`，选择 "build with mcp" 模式，如果右边亮绿灯就是连上了：
+
+![检查 MCP 连接](image-20.png)
 
 ---
 
 ## Trae 对话流程
+
+先进入 SOLO 模式，然后开始后面的对话步骤。
 
 ### 步骤 1：输入提示词
 
