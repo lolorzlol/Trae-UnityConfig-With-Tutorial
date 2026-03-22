@@ -17,7 +17,7 @@ Load the appropriate skill before starting each workflow:
 
 - Check both `message` and `success` from MCP call results to determine success
 - When MCP calls fail, adjust parameters based on the returned `message` and retry
-- Use bash commands to create folders (e.g., `mkdir -p`)
+- Run commands to create folders and scripts (e.g., `mkdir -p`)
 - Use `batch_execute` as much as possible to reduce MCP call times
 - Ensure the editor is not in Play mode before executing editor scripts
 - Execute editor scripts automatically via `unityMCP` (avoid manual execution)
