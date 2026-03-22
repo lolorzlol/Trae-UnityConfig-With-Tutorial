@@ -20,6 +20,7 @@ Load the appropriate skill before starting each workflow:
 - Run commands to create folders and scripts (e.g., `mkdir -p`)
 - Use `batch_execute` as much as possible to reduce MCP call times
 - Ensure the editor is not in Play mode before executing editor scripts
+- Place all editor scripts under `Assets/Editor/`
 - Execute editor scripts automatically via `unityMCP` (avoid manual execution)
 - Delete one-time use editor scripts after execution succeeds
 - Use git for version control, add proper `.gitignore` before `git init`
