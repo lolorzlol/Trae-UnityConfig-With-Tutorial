@@ -140,6 +140,14 @@ Load the appropriate skill before starting each workflow:
 
 ## Editor Scripts
 
+**Automated Configuration:**
+
+Use editor scripts (in `Assets/Editor/`) to automate complex reference setups:
+
+- **Scene object references**: Use `GameObject.Find()` to locate objects
+- **Prefab references**: Use `AssetDatabase.LoadAssetAtPath<T>()` to load assets from disk
+- **Trigger setup**: Add `[MenuItem]` attribute to create a menu item for the setup process
+
 **Running Editor Scripts:**
 
 1. Use `[MenuItem("YourMenuPath")]` attribute on a static method
