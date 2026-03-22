@@ -143,7 +143,7 @@ Load the appropriate skill before starting each workflow:
 
 **Automated Configuration:**
 
-Use editor scripts (in `Assets/Editor/`) to automate complex reference setups:
+Use editor scripts (in `Assets/Editor/`) to automate complex setups:
 
 - **Scene object references**: Use `GameObject.Find()` to locate objects
 - **Prefab references**: Use `AssetDatabase.LoadAssetAtPath<T>()` to load assets from disk
