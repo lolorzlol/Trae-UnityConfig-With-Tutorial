@@ -25,7 +25,7 @@ Load the appropriate skill before starting each workflow:
 - Delete one-time use editor scripts after execution succeeds
 - Use git for version control, add proper `.gitignore` before `git init`
 - Add Tooltip attributes to editor-configurable variables
-- Check Unity Console log first when encountering bugs
+- Monitor Unity Console regularly for logs and compile errors
 
 ### Plan Mode Orchestration
 
