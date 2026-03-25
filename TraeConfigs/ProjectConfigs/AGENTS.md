@@ -21,7 +21,7 @@ Invoke the appropriate skill before starting each workflow:
 
 | Workflow | Skill |
 |----------|-------|
-| unityMCP operations | `unity-mcp-helper` |
+| unityMCP operations | `unity-mcp-orchestrator` |
 | Unity Test Framework | `unity-test-framework` |
 
 ---
