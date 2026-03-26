@@ -21,6 +21,10 @@
 - [修复Bug](Tutorial-1/Examples/修复Bug.md)
 - [测试驱动开发](Tutorial-1/Examples/测试驱动开发.md)
 
+## 配置详解
+
+- [Trae 项目配置详解](Tutorial-2/Trae项目配置详解.md) - `.trae/` 目录结构、技能分类、使用指南
+
 ## License
 
 MIT
