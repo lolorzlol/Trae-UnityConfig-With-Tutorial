@@ -25,6 +25,8 @@
 
 然后描述你需要的功能，AI 会搜索可用的 Skill。
 
+官网在这里：https://skills.sh/    也可以在里面手动搜索
+
 ### skill-creator
 
 当你需要创建自己的 Skill 或修改现有 Skill 时使用。
