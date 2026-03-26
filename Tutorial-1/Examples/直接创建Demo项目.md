@@ -13,7 +13,8 @@ Unity 新建 3D 项目（2D 也可以）。
 ### 步骤 1：安装 Python
 
 下载地址：https://www.python.org/downloads/
-直接下载最新版，注意必须3.10以上（不包括3.10）
+
+直接下载最新版，注意必须 **3.10 以上（不包括 3.10）**。
 
 具体步骤直接看这个教程：https://blog.csdn.net/sensen_kiss/article/details/141940274
 
@@ -63,16 +64,23 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 ![MCP 运行状态](image-7.png)
 
-**常见问题一：使用的asset store旧版mcp** 
-这里注意先选择local模式
-![alt text](image-23.png)
+### 常见问题
 
-**常见问题二： 点击start server运行不起来**
-点下面Manual Server Launch旁边的三角形，自己手动开启mcp服务器。
-![alt text](image-24.png)
-复制框里面的内容到powershell，然后按enter键运行这段命令就能开启服务器了
-![alt text](image-25.png)
+**问题一：使用的是 Asset Store 旧版 MCP**
 
+需先选择 Local 模式：
+
+![选择 Local 模式](image-23.png)
+
+**问题二：点击 Start Server 运行不起来**
+
+点击 Manual Server Launch 旁边的三角形，手动开启 MCP 服务器：
+
+![手动启动](image-24.png)
+
+复制框内内容到 PowerShell，按 Enter 执行：
+
+![复制命令](image-25.png)
 
 ---
 
@@ -120,7 +128,7 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 ![手动添加 MCP](image-17.png)
 
-然后复制以下内容到里面，再确认：
+复制以下内容到里面，再确认：
 
 ![粘贴配置](image-18.png)
 
@@ -136,7 +144,7 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 ### 检查 MCP 连接
 
-最后检查 MCP 是否连接上。（注意：需要保证 Unity 先开启 MCP，然后打开 Trae，顺序不能反）
+最后检查 MCP 是否连接上。（**注意：需要保证 Unity 先开启 MCP，然后打开 Trae，顺序不能反**）
 
 点击 `@`，选择 "build with mcp" 模式，如果右边亮绿灯就是连上了：
 
@@ -147,7 +155,8 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 ## Trae 对话流程
 
 先进入 SOLO 模式，然后开始后面的对话步骤。
-**模型最好选：GML-5**
+
+**模型推荐选择：GML-5**
 
 ### 步骤 1：输入提示词
 
