@@ -45,24 +45,12 @@
 
 ### 使用方式
 
-**方式一：官网直接上传（推荐）**
+**官网直接上传**
 
 1. 打开 https://pdf2skills.memect.cn/quick-start
 2. 上传 PDF 文件
 3. 等待编译完成（10-30 分钟，根据文件大小）
 4. 下载 `skills.zip`
-
-**方式二：导入到项目**
-
-```bash
-# 解压到项目技能目录
-unzip skills.zip -d your-project/.claude/skills/你的技能名/
-
-# Claude Code 用户
-unzip skills.zip -d ~/.claude/skills/你的技能名/
-```
-
-导入完成后，AI 助手下次启动时自动加载，无需额外配置。
 
 ### 工作原理
 
@@ -77,12 +65,9 @@ unzip skills.zip -d ~/.claude/skills/你的技能名/
 - 将教程、规范文档转为可复用的技能
 - 让 AI 能参考和运用专业知识
 
+类似功能开源替代：https://github.com/yusufkaraaslan/Skill_Seekers
+
 ---
 
 ## 参考资源
-
-- **MCP 官方：** https://modelcontextprotocol.io/
-- **MCP Servers：** https://github.com/modelcontextprotocol/servers
-- **Skill 官方文档：** https://code.claude.com/docs/en/skills
-- **Agent Skill 课程：** https://anthropic.skilljar.com/introduction-to-agent-skills
-- **本项目 Skills：** `TraeConfigs/ProjectConfigs/.trae/skills/`
+**本项目配置的game-design技能来自：https://mp.weixin.qq.com/s/ci7e-uukIjnlozofqQLjrQ?scene=1&click_id=46**
