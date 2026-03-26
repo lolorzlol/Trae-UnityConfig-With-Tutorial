@@ -37,7 +37,7 @@ Invoke the appropriate skill before starting each workflow:
 - **Tooltips**: Add `[Tooltip]` attributes to editor-configurable variables
 - **Console monitoring**: Check Unity Console regularly for logs and compile errors
 - **Play mode**: Ensure editor is not in Play mode before executing editor scripts
-- **Save scenes**: Save scenes promptly after modifications
+- **Save scenes**: Save scenes promptly after modifications finished.
 
 ### Version Control
 
