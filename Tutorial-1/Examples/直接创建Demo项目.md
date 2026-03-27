@@ -34,6 +34,14 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 > PowerShell 粘贴使用 `Ctrl+Shift+V`，最后按 `Enter` 执行。
 
+**检查安装是否成功**
+
+在 PowerShell 中分别输入 `python` 和 `uv`，检查是否已正确安装：
+
+![检查 Python 安装](image-29.png)
+
+![检查 uv 安装](image-30.png)
+
 ### 步骤 3：安装 MCP
 
 安装方式有三种：
