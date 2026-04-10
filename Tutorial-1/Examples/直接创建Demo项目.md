@@ -42,9 +42,29 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 ![检查 uv 安装](image-30.png)
 
-### 步骤 3：安装 MCP
+### 步骤 3：安装 Git
 
-安装方式有三种：
+安装网址：https://git-scm.com/install/windows
+
+选择下载 Windows x64 的：
+
+![Git 下载页面](image-31.png)
+
+运行安装包：
+
+![Git 安装界面](image-32.png)
+
+**检查是否安装成功**
+
+在 PowerShell 中输入：
+
+```powershell
+git --version
+```
+
+### 步骤 4：安装 MCP
+
+安装方式有两种：
 
 **方式一：通过 Git URL 安装**
 
@@ -54,22 +74,17 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 ```
 
-**方式二：Unity Asset Store**
+**方式二：从源文件离线安装**
 
-![Unity Asset Store 安装](image-11.png)
+在 Unity 中：`Window > Package Manager > + > Add package from disk...`
 
-> Unity Asset Store 版本会落后一些。
+![添加本地包](image-33.png)
 
-**方式三：用我配置好的初始项目，剩下的继续跟着做**
+然后选择本项目文件夹中的 `MCPForUnity/package.json`：
 
-在本项目中的”配好了mcp和trae配置文件的原始项目”文件夹，解压，然后直接用 Unity Hub 打开项目就好了。
+![选择 package.json](image-34.png)
 
-1. 解压文件夹
-   ![解压配置好的项目](image-28.png)
-2. 用 Unity Hub 直接打开项目文件夹
-   ![用 Unity Hub 打开项目](image-27.png)
-
-### 步骤 4：开启 MCP
+### 步骤 5：开启 MCP
 
 依次点击菜单项开启 MCP：
 
@@ -81,7 +96,7 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 ![MCP 运行状态](image-7.png)
 
-### 常见问题
+#### 常见问题
 
 **问题一：使用的是 Asset Store 旧版 MCP**
 
@@ -127,7 +142,7 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 以下两种方式选其一：
 
-**方式一：启用项目级 MCP**
+### 方式一：启用项目级 MCP
 
 先确保 `.trae` 配置文件夹下面有 `mcp.json` 文件：
 
@@ -141,7 +156,7 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 ![启动 unityMCP](image-19.png)
 
-**方式二：在 Trae 编辑器里面手动添加**
+### 方式二：在 Trae 编辑器里面手动添加
 
 ![手动添加 MCP](image-17.png)
 
@@ -161,7 +176,9 @@ https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
 
 ### 检查 MCP 连接
 
-最后检查 MCP 是否连接上。（**注意：需要保证 Unity 先开启 MCP，然后打开 Trae，顺序不能反**）
+最后检查 MCP 是否连接上。
+
+> **注意：需要保证 Unity 先开启 MCP，然后打开 Trae，顺序不能反**
 
 点击 `@`，选择 "build with mcp" 模式，如果右边亮绿灯就是连上了：
 
