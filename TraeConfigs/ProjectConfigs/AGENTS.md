@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Project-specific agent instructions for Unity game development with unityMCP.
+Always respond in Chinese.
 
 ---
 

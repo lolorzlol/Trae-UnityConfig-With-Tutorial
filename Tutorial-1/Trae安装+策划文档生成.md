@@ -42,7 +42,7 @@ IDE 以文件夹为单位运行，需要先创建工作目录。
 
 **步骤 1：复制配置文件**
 
-将本项目 `TraeConfigs/ProjectConfigs` 中的内容复制到 Trae 项目文件夹下：
+将本项目 `TraeConfigs/ProjectConfigs` 中的内容复制到 Trae 项目文件夹下
 
 ![alt text](image-8.png)
 
